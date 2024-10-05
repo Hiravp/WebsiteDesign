@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Indian Delicacies</title>
+    <link rel="stylesheet" href="WebsiteDesign.css">
+    <script src="Website design.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="topnav">
+            <nav>
+                <ul>
+                    <li><img src="" class="logo" alt="Logo"></li>
+                
+                
+                    <li><a href="Website homepage.html">Home</a></li>
+                    <div class="dropdown">
+                      <button class="dropbtn">Event Information
+                        <i class="fa fa-caret-down"></i>
+                      </button>
+                      <div class="dropdown-content">
+                        <a href="Poha.html">Poha</a>
+                        <a href="Upma.html">Upma</a>
+                        <a href="Dhokla.html">Dhokla</a>
+                        <a href="Sandwitches.html">Sandwiches</a>
+                      </div>
+                    </div>
+                    <div class="dropdown">
+                      <button class="dropbtn">Calendar of Events
+                        <i class="fa fa-caret-down"></i>
+                      </button>
+                      <div class="dropdown-content">
+                        <a href="Parathas.html">Parathas</a>
+                        <a href="Curry.html">Curry</a>
+                        <a href="Lunch_bundle.html">Lunch_bundle</a>
+                      </div>
+                    </div>
+                    <div class="dropdown">
+                      <button class="dropbtn">Seating Map
+                        <i class="fa fa-caret-down"></i>
+                      </button>
+                      <div class="dropdown-content">
+                        <a href="Roti.html">Roti</a>
+                        <a href="Curry.html">Curry</a>
+                        <a href="Dinner_bundle.html">Dinner-Bundle</a>
+                      </div>
+                    </div>
+                    <div class="dropdown">
+                      <button class="dropbtn">Booking 
+                        <i class="fa fa-caret-down"></i>
+                      </button>
+                      <div class="dropdown-content">
+                        <a href="Chat.html">Chat</a>
+                        <a href="Drinks.html">Drink</a>
+                        <a href="Indo_chinese.html">Indo-Chinese Food</a>
+                        <a href="Pizza.html">Pizza</a>
+                        <a href="South-Indian.html">South-Indian</a>
+                        <a href="Dessert.html">Dessert</a>
+                      </div>
+                    </div>
+                    <li><a href="Contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <section class="intro" id="home">
+          <div class="reveal">
+            <h2>Welcome to Kutchi Beer</h2><br>
+            <h4>Pizza, Chat, and more!</h4>
+            <a href="Table-reservation.html" class="round-button">Table reservation</a>
+            
+            <div id="dealPopup" class="popup">
+              <div class="popup-content">
+                  <span class="close">&times;</span>
+                  <h2>Special Deal!</h2>
+                  <p id="popup-message">Enjoy 20% off on all appetizers this Today</p>
+                  <p> Don't miss out!</p>
+                  <button class="button" onclick="window.location.href='Order.html'">Order Now</button>
+
+              </div>
+            </div>
+          </div> 
+        </section>
+        
+      <section>
+      <div class="reveal">
+        <h1>The view of our Restaurant</h1><br>
+        <p>Our location is located at: Blank Address</p><br>
+        
+            <div class="slider">
+              <div class="slide-images">
+                  <div class="image-container">
+                    <img src="Screenshot 2024-07-18 at 16.27.10.png" alt="Restaurant View 1">
+                  </div>
+                  <div class="image-container">
+                    <img src="Screenshot 2024-07-18 at 16.32.48.png" alt="Restaurant View 2">
+                  </div>
+                  <div class="image-container">
+                    <img src="Screenshot 2024-07-18 at 16.33.36.png" alt="Restaurant View 3">
+                  </div>
+                  <div class="image-container">
+                    <img src="Screenshot 2024-07-18 at 16.34.07.png" alt="Restaurant View 3">
+                  </div>
+              
+            </div>
+          
+      
+          
+        </div>
+      </div>
+      </section>
+        <section>
+          <div class="reveal">
+            <h2>Orders</h2>
+            <a href="Party-Order-trays.html" class="round-button">Party tray order</a>
+            <a href="Order.html" class="round-button">Placing a order</a>
+          </div>
+        </section>
+
+
+       
+
+
+
+            
+            <script>
+              window.addEventListener('scroll', reveal);
+          
+              function reveal() {
+                  var reveals = document.querySelectorAll('.reveal');
+          
+                  for (var i = 0; i < reveals.length; i++) {
+                      var windowHeight = window.innerHeight;
+                      var revealTop = reveals[i].getBoundingClientRect().top;
+                      var revealPoint = 150;
+          
+                      if (revealTop < windowHeight - revealPoint) {
+                          reveals[i].classList.add('active');
+                      } else {
+                          reveals[i].classList.remove('active');
+                      }
+                  }
+              }
+            </script>
+    </main>
+    <footer>
+        <div class="footer-content">
+            <p>Contact us: 123-456-7890 | email@example.com</p>
+            <div class="social-media">
+                <a href="#"><img src="facebook.png" alt="Facebook"></a>
+                <a href="#"><img src="instagram.png" alt="Instagram"></a>
+                <a href="#"><img src="twitter.png" alt="Twitter"></a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
