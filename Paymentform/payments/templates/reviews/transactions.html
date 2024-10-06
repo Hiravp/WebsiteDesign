@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Info Form</title>
+</head>
+<body>
+    <h1>Enter Your Payment and Contact Details</h1>
+
+    <form method="POST">
+        {% csrf_token %}
+        
+        <!-- Render form fields manually -->
+        <label for="id_name">Full Name:</label>
+        {{ form.name }}
+
+        <label for="id_email">Email Address:</label>
+        {{ form.email }}
+
+        <label for="id_phone_number">Phone Number:</label>
+        {{ form.phone_number }}
+
+        <label for="id_address1">Address 1:</label>
+        {{ form.address1 }}
+
+        <label for="id_address2">Address 2 (optional):</label>
+        {{ form.address2 }}
+
+        <label for="id_zip_code">Zip Code:</label>
+        {{ form.zip_code }}
+
+        <label for="id_country">Country:</label>
+        {{ form.country }}
+
+        <label for="id_card_num">Card Number:</label>
+        {{ form.card_num }}
+
+        <label for="id_expiration">Expiration Date (MM/YY):</label>
+        {{ form.expiration }}
+
+        <label for="id_security_code">Security Code:</label>
+        {{ form.security_code }}
+        
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
+
+{% comment %}
+Things that might need editing
+
+1) Make the message when hovering over text field be different if u want to (idk how html works that well yet)
+
+ {% endcomment %}
