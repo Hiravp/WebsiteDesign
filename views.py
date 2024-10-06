@@ -1,25 +1,23 @@
-from django.shortcuts import render, redirect
-from .forms import customer_info
-from django.http import HttpResponseRedirect
+from django.shortcuts import render
+from .forms import PaymentForm  # Assuming the form is in forms.py
 
-def customer_info_view(request):
+def payment_form_view(request):
+    # Handle POST request
     if request.method == 'POST':
-        form = customer_info(request.POST)
-
+        form = PaymentForm(request.POST)
         if form.is_valid():
-            print(form.cleaned_data)
-            return redirect("thank_you")  # Redirect to thank you page after its defined ig
-        else:
-            form = customer_info()  # For GET request, display an empty form
-
+            # Process the form data (e.g., save to the database)
+            # form.cleaned_data['name'], etc.
+            pass
     else:
-        form = customer_info()
-        
-    return render(request, 'reviews/transactions.html', 
-        {'form': form}) # defines form as form template
+        # Create an empty form instance for GET requests
+        form = PaymentForm()
 
-def thank_you(request):
-    return render(request, "reviews/post_submission.html")
+    # Render the template and pass the form
+    return render(request, 'payment_form.html', {'form': form})
+
+
+
 
 """ 
 Things that DEFINETLY need editing

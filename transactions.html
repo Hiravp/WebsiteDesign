@@ -10,58 +10,19 @@
 
     <form method="POST">
         {% csrf_token %}
-        
-        <h2>General Information<h2/>
-        <!-- Render form fields dynamically (based on forms.py) -->
-        {{ form.name.label_tag }}
-        {{ form.name }}
-
-        {{ form.email.label_tag }}
-        {{ form.email }}
-
-        {{ form.phone_number.label_tag }}
-        {{ form.phone_number }}
-
-        <h2>Ticket Booking Information<h2/>
-
-        {{ form.ticket_num.label_tag }}
-        {{ form.ticket_num }}
-
-        {{ form.address1.label_tag }}
-        {{ form.address1 }}
-
-        {{ form.address2.label_tag }}
-        {{ form.address2 }}
-
-        {{ form.zip_code.label_tag }}
-        {{ form.zip_code }}
-
-        {{ form.country.label_tag }}
-        {{ form.country }}
-
-        {{ form.card_num.label_tag }}
-        {{ form.card_num }}
-
-        {{ form.expiration.label_tag }}
-        {{ form.expiration }}
-
-        {{ form.security_code.label_tag }}
-        {{ form.security_code }}
-        
+        {{ form.as_p }}
         <button type="submit">Complete transaction ($5)</button>
     </form>
+
+    <script>
+        const ticketInput = document.getElementById("id_ticket_num");  // Make sure you have the correct field ID
+        const submitButton = document.querySelector("button[type='submit']");
+
+        ticketInput.addEventListener("input", function() {
+            const totalCost = ticketInput.value * 5;
+            submitButton.textContent = `Complete transaction ($${totalCost})`;
+        });
+    </script>
+    
 </body>
 </html>
-
-{% comment %}
-Things that might need editing
-
-1) Make the message when hovering over text field be different if u want to (idk how html works that well yet)
-2) Make it so that the submit button multiplies number of tickets booked by cost of 1 ticket ($5 for now; right now the submit button shows only $5)
-
-Cool Ideas
-
-1) Make there be a horizantal line after all the form filling stuff that updates the total and shows how much tax and extra charges there are
-2) Make the General information and payment information sections of the form collapsable for more organization
-
- {% endcomment %}
