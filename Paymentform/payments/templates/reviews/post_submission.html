@@ -3,21 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <h1>Ticket Order successful</h1>
+    <title>Thank You!</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to CSS file -->
 </head>
 <body>
-        
-        <button type="home">Return to Home</button>
-        <button type="re-order">Order more tickets</button>
-    </form>
+    <h1>Ticket Order Successful!</h1>
+    <div class="message">
+        Thank you for your purchase! Your tickets have been booked successfully.
+    </div>
+    
+        <button id="home">Return to Home</button>
+        <button id="reorder">Order More Tickets</button>
 
+    <script>
+        document.getElementById('home').addEventListener('click', function() {
+            window.location.href = '/'; // Replace with the actual home page URL
+        });
+
+        document.getElementById('reorder').addEventListener('click', function() {
+            window.location.href = '/payments';
+        });
+    </script>
 </body>
 </html>
-
-{% comment %} 
-Things to change
-
-1) add functionality to the 2 buttons
-2) delete this page if u want and make it redirect to home directly or something idk
-
-{% endcomment %}
