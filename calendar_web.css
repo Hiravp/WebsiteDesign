@@ -1,3 +1,35 @@
+
+        body {
+            background-color: #000000;
+            color: white;
+	    font-size: 18px;
+        }
+        h1, h2, h3, p, li {
+            color: white;
+        }
+        h1, h2, h3 {
+            text-align: center;
+        }
+ul {
+            list-style-position: inside; }
+        li {
+            margin-bottom: 20px; 
+	    font-size: 18px;
+        }
+
+.blinkT {
+            animation: blinker 3.0s linear infinite;
+            color: blue;
+            font-size: 1.5em;
+            /* Larger, responsive font size */
+            margin-bottom: 10px;
+        }
+
+        @keyframes blinker {
+            50% {
+                opacity: 0;
+            }
+        }
 * {
   margin: 0;
   padding: 0;
@@ -400,3 +432,4 @@ section:nth-child(3) h2 {
 .button:hover {
   background-color: #45a049;
 }
+
