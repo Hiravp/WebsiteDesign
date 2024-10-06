@@ -1,19 +1,22 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .forms import customer_info
 from django.http import HttpResponseRedirect
 
 def customer_info_view(request):
     if request.method == 'POST':
         form = customer_info(request.POST)
+
         if form.is_valid():
-            print(form)
-            return HttpResponseRedirect('/thank-you')  # Redirect to thank you page after its defined ig
+            print(form.cleaned_data)
+            return redirect("thank_you")  # Redirect to thank you page after its defined ig
+        else:
+            form = customer_info()  # For GET request, display an empty form
+
     else:
-        form = customer_info()  # For GET request, display an empty form
-
-    form = customer_info()
-
-    return render(request, 'reviews/transactions.html', {'form': form}) # takes user to thankyou page for submitting real data
+        form = customer_info()
+        
+    return render(request, 'reviews/transactions.html', 
+        {'form': form}) # defines form as form template
 
 def thank_you(request):
     return render(request, "reviews/post_submission.html")
@@ -22,7 +25,7 @@ def thank_you(request):
 Things that DEFINETLY need editing
 
 1) Styling on form (hopefully Soham figures it out)
-2) Styling and functionality of thank you page (/thank-you)
+2) Styling and functionality of thank you page (payments/thank-you)
 
 Things that might need editing
 
