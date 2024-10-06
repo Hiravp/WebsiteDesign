@@ -103,7 +103,7 @@ if (currentSchedule) {
 } else {
     // If not within schedule, show new message
     setTimeout(function() {
-        popupMessage.textContent = "Come to a breakfast, lunch, or dinner, at specific timing, and get 20% off.";
+        popupMessage.textContent = "For booking in the weekdays, 20% off";
         popup.style.display = "block";
     }, 2000); // Delay before showing the popup
 }

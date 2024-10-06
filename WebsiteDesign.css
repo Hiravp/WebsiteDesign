@@ -273,16 +273,16 @@ section {
 
 section:nth-child(1) {
   font-size: 30px;
-  background-color: sandybrown;
   padding: 20px 10%;
   min-height: 100vh; /* Make the section take up full viewport height */
   display: flex;
   justify-content: center; /* Center content horizontally */
   align-items: center; /* Center content vertically */
+  background-image: url("Screenshot 2024-10-06 at 15.59.50.png");
 }
 
 section:nth-child(1).active {
-  color: rgb(254, 252, 252);
+  color: rgb(250, 1, 1);
 }
 
 section:nth-child(1).active h1::after {
