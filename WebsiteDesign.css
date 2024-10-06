@@ -275,15 +275,14 @@ section:nth-child(1) {
   font-size: 30px;
   background-color: sandybrown;
   padding: 20px 10%;
-  height: 200px; /* Adjust the height of the first section */
-  background-image: url('');
-  
+  min-height: 100vh; /* Make the section take up full viewport height */
+  display: flex;
+  justify-content: center; /* Center content horizontally */
+  align-items: center; /* Center content vertically */
 }
 
 section:nth-child(1).active {
   color: rgb(254, 252, 252);
-  position: relative;
-  top: 150px;
 }
 
 section:nth-child(1).active h1::after {
@@ -293,10 +292,10 @@ section:nth-child(1).active h1::after {
   height: 2px; /* Adjust the height of the border */
   background-color: black;
   margin-top: 10px; /* Adjust this to change the distance from the title */
-  
 }
 
 section:nth-child(2) {
+  text-align: center;
   font-size: 30px;
   background-color: rgb(249, 105, 9);
 }
