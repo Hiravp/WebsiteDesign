@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+
+    <meta charset="UTF-8"> <!-- Added character set for proper encoding -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arena Use Rules and Guidelines</title> <!-- Added title for the page -->
+    <style>
+        body {
+            background-color: #0077B6;
+            color: #F7F9FB;
+            font-size: 18px;
+        }
+        h1, h2 {
+            color: white;
+            text-align: center; /* Moved the alignment to CSS */
+        }
+    </style>
+    <link rel="stylesheet" type="text/css" href="{% static 'WebsiteDesign.css' %}">
+    <link rel="script" type="text/js" href="{% static 'Website design.js' %}">  
+
+</head>
+<body>
+    <div class="topnav">
+        <nav>
+            <ul>
+                <li><img src="{% static 'logo.png' %}" class="logo" alt="Logo"></li>
+            
+            
+                <li><a href="/">Home</a></li>
+
+                <div class="dropdown">
+                  <button class="dropbtn">Calendar of Events
+                    <i class="fa fa-caret-down"></i>
+                  </button>
+                  <div class="dropdown-content">
+                    <a href="/calendar">Calendar</a>
+                    
+                  </div>
+                </div>
+                <div class="dropdown">
+                  <button class="dropbtn">Seating Map
+                    <i class="fa fa-caret-down"></i>
+                  </button>
+                  <div class="dropdown-content">
+                    <a href="/seating">Seating map </a>
+                    
+                    
+                  </div>
+                </div>
+                <div class="dropdown">
+                  <button class="dropbtn">Booking 
+                    <i class="fa fa-caret-down"></i>
+                  </button>
+                  <div class="dropdown-content">
+                    <a href="/transactions">Booking</a>
+                    
+                  </div>
+                </div>
+            </ul>
+        </nav>
+    </div>
+
+    <h1>Arena Use Rules and Guidelines</h1>
+    <h2>General Conduct</h2> <!-- Fixed closing tag -->
+
+    <p align = "center">
+        <b>Respect Others:</b> Treat all participants, staff, and spectators with courtesy. Disruptive behavior will not be tolerated.<br><br> <!-- Added <br> for spacing -->
+       
+        <b>No Smoking or Vaping:</b> Smoking and vaping are prohibited in and around the arena premises.<br><br>
+       
+        <b>Alcohol Policy:</b> Consumption of alcohol is not allowed unless specifically permitted for certain events.<br><br>
+
+        <b>Facility Use:</b> Cleanliness: Users must keep the area clean and dispose of trash properly.<br><br>
+
+        <b>Equipment Usage:</b> Only authorized personnel may use sound, lighting, and other specialized equipment.<br><br>
+
+        <b>Seating:</b> Sit only in designated seating areas and follow any seating arrangements specified by event organizers.<br><br>
+
+        <b>Emergency Exits:</b> Familiarize yourself with emergency exits and follow evacuation procedures in case of an emergency.<br><br>
+
+        <b>Event-Specific Guidelines:</b><br>
+       
+        <b>Tickets:</b> All attendees must have a valid ticket for entry to events. No unauthorized entry will be permitted.<br><br>
+
+        <b>Access to Restricted Areas:</b> Access to backstage, storage, or other restricted areas is prohibited unless authorized.<br><br>
+
+        <b>Personal Items:</b> Attendees are responsible for their personal belongings. The arena is not liable for lost or stolen items.<br><br>
+
+        <b>Safety and Security:</b><br>
+       
+        <b>Emergency Protocols:</b> Follow all emergency protocols and instructions from staff during events.<br><br>
+
+        <b>Health and Safety:</b> Adhere to any health and safety guidelines in place, including those related to COVID-19 or other public health concerns.<br><br>
+
+        <b>Rental Guidelines (for those renting the arena):</b><br>
+       
+        <b>Booking Procedures:</b> All rental requests must be submitted through the arena planner page and confirmed with a signed contract.<br><br>
+
+        <b>Deposit and Payment:</b> A deposit may be required to secure the booking, with final payment due prior to the event.<br><br>
+
+        <b>Insurance:</b> Renters may be required to provide proof of liability insurance.<br><br>
+
+        <b>Event Setup and Breakdown:</b> Renters are responsible for setting up and breaking down their events within the allotted rental time.<br><br>
+
+        <u>These rules aim to ensure the safety, comfort, and enjoyment of everyone using the arena, whether for events or general use.</u>
+    </p>
+
+</body>
+</html>
