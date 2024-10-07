@@ -494,3 +494,12 @@ nav ul li a:hover {
     padding-top: 5px; /* Adjust this value for alignment */
     vertical-align: top;
 }
+body {
+    background-color: #0077B6;
+    color: #F7F9FB;
+    font-size: 18px;
+}
+h1, h2 {
+    color: white;
+    text-align: center; /* Moved the alignment to CSS */
+}
