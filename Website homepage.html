@@ -21,17 +21,6 @@
                 
                     <li><a href="Website homepage.html">Home</a></li>
                     <div class="dropdown">
-                      <button class="dropbtn">Event Information
-                        <i class="fa fa-caret-down"></i>
-                      </button>
-                      <div class="dropdown-content">
-                        <a href="Poha.html">Sports</a>
-                        <a href="Upma.html">Birthday</a>
-                        <a href="Dhokla.html">Relation related evernts</a>
-                        
-                      </div>
-                    </div>
-                    <div class="dropdown">
                       <button class="dropbtn">Calendar of Events
                         <i class="fa fa-caret-down"></i>
                       </button>
@@ -55,7 +44,7 @@
                         <i class="fa fa-caret-down"></i>
                       </button>
                       <div class="dropdown-content">
-                        <a href="Paymentform/payments/templates/reviews/transactions.html">Booking</a>
+                        <a href="transactions.html">Booking</a>
                         
                       </div>
                     </div>
@@ -114,7 +103,7 @@
         <section>
           <div class="reveal">
             <h2>Orders</h2>
-            <a href="Booking.html" class="round-button">Booking</a>
+            <a href="{% url 'transaction_form' %}" class="round-button">Booking</a>
           </div>
         </section>
 
