@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant</title>
+    <link rel="stylesheet" href="Booking.css">
+    <link rel="Index" href="Website homepage.html">
+    <script src="Website design.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="topnav">
+            <nav>
+                <ul>
+                    <li><img src="" class="logo" alt="Logo"></li>
+                
+                
+                    <li><a href="Website homepage.html">Home</a></li>
+                    <div class="dropdown">
+                      <button class="dropbtn">Event Information
+                        <i class="fa fa-caret-down"></i>
+                      </button>
+                      <div class="dropdown-content">
+                        <a href="Poha.html">Sports</a>
+                        <a href="Upma.html">Birthday</a>
+                        <a href="Dhokla.html">Relation related evernts</a>
+                        
+                      </div>
+                    </div>
+                    <div class="dropdown">
+                      <button class="dropbtn">Calendar of Events
+                        <i class="fa fa-caret-down"></i>
+                      </button>
+                      <div class="dropdown-content">
+                        <a href="Parathas.html">Calendar</a>
+                        
+                      </div>
+                    </div>
+                    <div class="dropdown">
+                      <button class="dropbtn">Seating Map
+                        <i class="fa fa-caret-down"></i>
+                      </button>
+                      <div class="dropdown-content">
+                        <a href="Roti.html">Seating map </a>
+                        
+                        
+                      </div>
+                    </div>
+                    <div class="dropdown">
+                      <button class="dropbtn">Booking 
+                        <i class="fa fa-caret-down"></i>
+                      </button>
+                      <div class="dropdown-content">
+                        <a href="transactions.html">Booking</a>
+                        
+                      </div>
+                    </div>
+                    <li><a href="Contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+        
+      <form>
+          <details>
+            <summary>General Information (required)</summary>
+            <div>
+              <label for="name">Full name</label>
+              <input type="text" id="name" name="name" placeholder="Enter full name here" required></input>
+            </div>
+            
+            <div>
+              <label for="email">Email Address</label>
+              <input type="email" id="email" name="email" placeholder="example@email.com" minlength="3" required></input>
+            </div>
+
+            <div>
+              <label for="phone#">Phone Number</label>
+              <input type="tel" id="phone#" name="phone#" placeholder="123-456-7890" minlength="12" maxlength="12" required></input>
+            </div>
+
+            <div>
+              <label for="Address_1">Address 1 (required)</label>
+              <input type="text" id="Address_1" name="Address_1" placeholder="585 Peachtree Parkway" minlength="15" required></input>
+            </div>
+
+            <div>
+              <label for="Address_2">Address 2 (optional)</label>
+              <input type="text" id="Address_2" name="Address_2" minlength="15"></input>
+            </div>
+
+            <div>
+              <label for="Zcode">Zip code</label>
+              <input type="number" id="Zcode" name="Zcode" placeholder="30041" minlength="5" maxlength="5" required></input>
+            </div>
+
+            <div>
+              <label for="country">Choose a country</label>
+              <select id="country" name="country" required>
+                <option value="canada">Canada</option>
+                <option value="us">United States of America (US)</option>
+                <option value="mexico">Mexico</option>
+              </select>
+            </div>
+
+            <div>
+              <label for="cardNumber">Card Number:</label>
+              <input type="password" id="cardNumber" name="cardNumber" placeholder="0123 2345 6789 0123" pattern="\d{4} \d{4} \d{4} \d{4}" required>
+              <small>Format: 0123 2345 6789 0123 (space every 4 digits)</small><br><br>
+            </div>
+
+            <div>
+              <label for="expiry">Expiry Date (MM/YY):</label>
+              <input type="text" id="expiry" name="expiry" placeholder="MM/YY" pattern="(0[1-9]|1[0-2])\/\d{2}" required>
+              <small>Format: MM/YY</small><br><br>
+            </div>
+
+            <div>
+              <label for="sec-code">Security Code</label>
+              <input type="password" id="sec-code"></input>
+            </div>
+          </details>
+
+          <details>
+            <summary>Ticket Booking</summary>
+
+            <div>
+              <label for="ticket#">How many tickets would you like to book ($5 each)?</label>
+              <select id="ticket#" name="ticket#" required>
+                <option value="one">1</option>
+                <option value="two">2</option>
+                <option value="three">3</option>
+                <option value="four">4</option>
+                <option value="five">5</option>
+                <option value="six">6</option>
+                <option value="seven">7</option>
+                <option value="eight">8</option>
+                <option value="nine">9</option>
+                <option value="ten">10</option>
+              </select>
+            </div>
+
+            <div>
+              <label for="events">Select which event you are registering for:</label>
+              <select id="events" name="events" required>
+                <option value="band">Band Performance (10/14)</option>
+                <option value="college+career">College and Career Help (10/18)</option>
+                <option value="basketball">Basketfest (10/19)</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+
+            <script> //updates # of tickets user purchases, total cost, and event tickets are for in <small> tag at end of section
+              function updateCost() {
+                  // Get the selected number of tickets
+                  const ticketDropdown = document.getElementById("ticket#");
+                  const selectedTickets = parseInt(ticketDropdown.value);
+      
+                  // Calculate the total cost (each ticket is $5)
+                  const cost = selectedTickets * 5;
+      
+                  // Update the text in the small tag with cost and number of tickets
+                  document.getElementById("costDisplay").innerText = `$${cost}`;
+                  document.getElementById("ticketCount").innerText = selectedTickets;
+                  updateEvent(); // Call updateEvent to display the selected event
+              }
+      
+              function updateEvent() {
+                  // Get the selected event
+                  const eventDropdown = document.getElementById("events");
+                  const selectedEvent = eventDropdown.options[eventDropdown.selectedIndex].text;
+      
+                  // Update the event display in the small tag
+                  document.getElementById("eventDisplay").innerText = selectedEvent;
+              }
+      
+              // Run the update functions whenever the ticket count or event is changed
+              window.onload = function() {
+                  document.getElementById("ticket#").addEventListener("change", updateCost);
+                  document.getElementById("events").addEventListener("change", updateEvent);
+              };
+          </script>
+
+            <div>
+              <label for="other">If you chose other:</label><br>
+              <textarea id="other" name="other" rows="5" cols="50" placeholder="Include event name, time, and date (if Other was selected)"></textarea>
+            </div>
+
+            <div>
+              <input type="checkbox" required></input>
+              <small>By selecting this checkbox and pressing "Submit form", you agree to follow<br>
+                the Arena Use Rules and Guidelines and pay <span id="costDisplay">$0</span> to purchase <span id="ticketCount">0</span> tickets<br>
+                for the following event: <span id="eventDisplay">__</span>.</small>
+            </div>
+
+            <script>
+              function navigateToArenaRules() {
+                  window.location.href = 'seating_chart.html'; // edit url to go to actual page (if it doesn't work yet)
+              }
+          </script>
+
+            <div>
+              <button type="button" onclick="navigateToArenaRules()">Go to Seating Chart</button>
+              <input type="submit" value="Submit form"></input>
+            </div>
+
+
+          </details>
+
+          <details>
+            <summary>Arena Reservation</summary>
+
+            <div>
+              <label for="date">Choose a reservation date:</label>
+              <input type="date" id="date" name="date" required></input><br>
+
+              <label for="time">Enter a reservation time:</label>
+              <input type="text" id="time" name="time" pattern="^(0?[1-9]|1[0-2]):([0-5]\d)$" placeholder="8:25" required></input>
+
+              <select id="AM/PM" name="AM/PM" required>
+                <option value="PM">AM</option>
+                <option value="PM">PM</option>
+              </select>
+            </div>
+
+            <div>
+              <label for="materials">Explain the materials you will use to host your event<br>(write "none" if you will not be bringing anything)</label><br>
+              <textarea id="materials" name="materials" rows="10" cols="50" minlength="4" placeholder="A 65 inch tv to watch movies..." required></textarea>
+            </div>
+
+            <div>
+              <label for="#-of-people">Approximately how many people will be at the event (600 people max)</label>
+              <input type="number" id="#-of-people" name="#-of-people" min="1" max="600" required>
+            </div>
+
+            <div>
+              <input type="checkbox" required></input>
+              <small>By selecting this checkbox and pressing "Submit form", you agree to<br>
+                conform to the Arena Use Rules and Guidelines<br>
+                (contact using email below to discuss payment amount) </small>
+            </div>
+
+            <div>
+              <button type="button" onclick="navigateToArenaRules()">Go to Seating Chart</button>
+              <input type="submit" value="Submit form"></input>
+            </div>
+
+          </details>
+
+        </form>
+         <!-- Dropdown menus -->
+         
+    <footer>
+        <div class="footer-content">
+            <p>Contact us: 123-456-7890 | email@example.com</p>
+            <div class="social-media">
+                <a href="#"><img src="facebook.png" alt="Facebook"></a>
+                <a href="#"><img src="instagram.png" alt="Instagram"></a>
+                <a href="#"><img src="twitter.png" alt="Twitter"></a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
