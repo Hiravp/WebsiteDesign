@@ -7,10 +7,8 @@
 
 body, html {
   height: 100%;
-  background: #3d3d3d;
+  background: #f5f5f5; /* Lighter background for better readability */
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  padding: 0;
-  margin: 0;
 }
 
 .header-content {
@@ -36,14 +34,13 @@ nav ul li {
 
 nav ul li a {
   color: #3d3d3d;
-  text-decoration: none;
-  font-weight: bold;
-  padding: 10px;
-  transition: all 0.3s ease;
+  padding: 12px 16px; /* Adjusted padding */
+  transition: background-color 0.3s, color 0.3s;
 }
 
 nav ul li a:hover {
-  color: #000;
+  background-color: #f6f6f6; /* Light hover background */
+  color: #f60707; /* Keep the text color for consistency */
 }
 
 .intro {
@@ -92,8 +89,9 @@ footer {
 }
 
 .footer-content {
-  padding: 20px 5%;
-  border-top: 1px solid #ddd;
+  background-color: #3d3d3d; /* Dark footer for contrast */
+  color: #fff;
+  padding: 30px 5%;
 }
 
 .slider {
@@ -265,11 +263,16 @@ footer {
 }
 
 section {
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center; /* Center content vertically */
+  min-height: 100vh; /* Ensure each section takes full screen height */
+  padding: 20px;     /* Add padding for spacing */
+  box-sizing: border-box;
 }
+section::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
 
 section:nth-child(1) {
   font-size: 30px;
@@ -303,16 +306,26 @@ section:nth-child(2) {
 section:nth-child(3) {
   font-size: 30px;
   background-color: rgb(49, 4, 247);
-  display: flex; /* Enable flexbox */
   justify-content: center; /* Center horizontally */
   align-items: center; /* Center vertically */
   text-align: center; /* Center the text within the section */
   height: 100vh; /* Ensure the section has a defined height */
+  display: block; /* Remove flexbox behavior */
+  padding: 50px 10%; /* Add padding to create space */
 }
 
 section:nth-child(3) h2 {
   color: rgb(255, 0, 0);
   margin: 0; /* Remove default margins */
+  margin-bottom: 20px;
+}
+section:nth-child(3) ul {
+  color: black;
+  list-style: none; /* Remove default list styling */
+  padding-left: 0; /* Remove padding */
+}
+section:nth-child(2), section:nth-child(3) {
+  margin-top: 50px; /* Add spacing between sections */
 }
 
 
@@ -388,15 +401,37 @@ section:nth-child(3) h2 {
 
 /* Button style */
 .button {
-  background-color: #4CAF50;
-  color: white;
-  padding: 15px 20px;
-  border: none;
-  cursor: pointer;
-  font-size: 10px;
-  margin-top: 20px;
+  background-color: #ffab00; /* Use a bright color for buttons */
+  border-radius: 5px; /* Rounded corners */
+  transition: background-color 0.3s;
 }
 
 .button:hover {
   background-color: #45a049;
 }
+
+section p, section ul {
+  line-height: 1.6; /* Increase line height for better readability */
+  margin-bottom: 20px; /* Add space between elements */
+}
+
+section h2 {
+  font-size: 36px; /* Increase heading size */
+  margin-bottom: 20px;
+}
+
+/* Ensure the images align properly next to the text */
+ul li img {
+  width: 30px; /* Adjust size as needed */
+  height: auto;
+  margin-right: 10px; /* Add space between image and text */
+  vertical-align: middle; /* Align images with text */
+}
+
+/* Style for the list items */
+ul li {
+  display: flex;
+  align-items: center; /* Vertically center the text and image */
+  margin-bottom: 15px; /* Space between list items */
+}
+
